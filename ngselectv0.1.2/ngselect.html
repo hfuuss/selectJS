@@ -1,4 +1,4 @@
-<html ng-app="ngSelect">
+<html ng-app="myApp">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -9,15 +9,9 @@
 <body>
   <div ng-controller="showHideController" class="container">
 
-  <li class="select_box">
-    <span ng-click="openSlect=!openSlect">请选择...</span>
-    <ul ng-show="openSlect">
-      <li>选项一</li>
-      <li>选项二</li>
-      <li>选项三</li>
-      <li>选项四</li>
-      <li>选项五</li>
-    </ul>
+ <div ngSelect="[items,callback]"> </div> 
+    
+    
   </li>
 
 
