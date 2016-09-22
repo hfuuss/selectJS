@@ -10,8 +10,14 @@
 </head>
 <body>
 <div ng-controller="DemoCtrl">
+111
+<div ssng-select="items"></div>
 
-<div ssng-Select="items"></div>
+</div>
+<div ng-controller="DemoCtrl2">
+222
+
+<div ssng-select="items2"></div>
 
 <!-- <ssng-Select items="items" callback="callback"></ssng-Select> -->
 
@@ -28,6 +34,12 @@
     {index: 1, text: 'desc001'},
     {index: 2, text: 'desc002'},
     {index: 3, text: 'desc003'},        
+];
+
+	var items2 = [
+    {index: 12, text: '2desc001'},
+    {index: 22, text: '2desc002'},
+    {index: 32, text: '2desc003'},        
 ];
 
 </script>

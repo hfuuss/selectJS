@@ -1,0 +1,52 @@
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script src="./angular-1.5.7/angular.min.js"></script>
+
+
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+ 
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Products</h3>
+        </div>
+        <div class="panel-body">
+            <div enter="products">sss</div>
+        </div>
+    </div>
+ 
+ 
+</body>
+<script>
+var myApp = angular.module('myApp', []);
+    myApp.controller('myCtrl', ["$scope", function ($scope) {
+    	// $scope.getproducts = function(tip){
+    	// 	console.log(tip[0])
+    	// }
+        $scope.products = [
+            { name: "Apples", category: "Fruit", price: 1.20, expiry: 10 },
+            { name: "Bananas", category: "Fruit", price: 2.42, expiry: 7 },
+            { name: "Pears", category: "Fruit", price: 2.02, expiry: 6 }
+        ];
+    }])
+   myApp.directive("enter", function () {
+        return function (scope, element, attrs) {
+        	element.bind('mouseenter',function(){
+        		var data = scope[attrs['enter']];
+        		
+        		console.log("sss"+data);
+        	})
+
+        };
+    });
+
+
+   var products = [
+            { name: "Apples", category: "Fruit", price: 1.20, expiry: 10 },
+            { name: "Bananas", category: "Fruit", price: 2.42, expiry: 7 },
+            { name: "Pears", category: "Fruit", price: 2.02, expiry: 6 }
+        ];
+</script>
+</html>

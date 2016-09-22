@@ -8,15 +8,11 @@ maApp.directive('ssngSelect', function(){
 
         link: function(scope, element, attrs){
 
-          
-                
+          scope.datas =  scope[attrs['ssngSelect']];
+         
                      scope.openSlect = false; 
-
-                     scope.items = items;
-
-                     console.log(items[0]);
-                  
-                  
+                                 
+                                    
                      scope.callback = function(index,text){
                       scope.index = index;
                       scope.text = text;
@@ -27,7 +23,7 @@ maApp.directive('ssngSelect', function(){
 
         template: '<span ng-click="openSlect=!openSlect" >请选择...</span>' +
             '<ul ng-show="openSlect">' +
-            '<table><tr ng-repeat="item in items"><td ng-click="callback(item.index,item.text)">{{ item.index }}:{{ item.text }}</td></tr></table>'+
+            '<table><tr ng-repeat="item in datas"><td ng-click="callback(item.index,item.text)">{{ item.index }}:{{ item.text }}</td></tr></table>'+
             '</ul>'
     };
 });
@@ -35,8 +31,16 @@ maApp.directive('ssngSelect', function(){
 
 maApp.controller('DemoCtrl', function($scope){
 
- // $scope.items = items;
+  $scope.items = items;
+
 
 });
 
+
+maApp.controller('DemoCtrl2', function($scope){
+
+
+  $scope.items2 = items2;
+
+});
 }());
