@@ -1,14 +1,27 @@
+(function(){
 var maApp = angular.module('app', []);
 
 maApp.directive('ssngSelect', function(){
 
     return {
-        restrict: 'E',
-        scope: {
-            items: '=',
-            callback: '='
-        },
-        link: function($scope, element, attrs){
+        restrict: 'A',
+
+        link: function(scope, element, attrs){
+
+          
+                
+                     scope.openSlect = false; 
+
+                     scope.items = items;
+
+                     console.log(items[0]);
+                  
+                  
+                     scope.callback = function(index,text){
+                      scope.index = index;
+                      scope.text = text;
+                      alert(index);
+                    }
            
         },
 
@@ -22,18 +35,8 @@ maApp.directive('ssngSelect', function(){
 
 maApp.controller('DemoCtrl', function($scope){
 
- $scope.items = [
-    {index: 1, text: 'desc001'},
-    {index: 2, text: 'desc002'},
-    {index: 3, text: 'desc003'},        
-];
-
-  $scope.openSlect = false; 
-
-  $scope.callback = function(index,text){
-    $scope.index = index;
-    $scope.text = text;
-    alert(index);
-  }
+ // $scope.items = items;
 
 });
+
+}());

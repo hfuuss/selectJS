@@ -3,15 +3,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <script src="./angular-1.5.7/angular.min.js"></script>
+<!-- <script src="./ngselect.controller"></script>
+ -->
 <script src="./ngselect.js"></script>
 
 </head>
 <body>
 <div ng-controller="DemoCtrl">
 
-<!-- <div ssng-Select="[items,callback]"></div> -->
+<div ssng-Select="items"></div>
 
-<ssng-Select items="items" callback="callback"></ssng-Select>
+<!-- <ssng-Select items="items" callback="callback"></ssng-Select> -->
 
 </div>
     
@@ -20,7 +22,15 @@
 
 
  </div>
+<script type="text/javascript">
+	
+	var items = [
+    {index: 1, text: 'desc001'},
+    {index: 2, text: 'desc002'},
+    {index: 3, text: 'desc003'},        
+];
 
+</script>
 
 </body>
 </html>
