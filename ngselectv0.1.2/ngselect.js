@@ -1,46 +1,33 @@
 (function(){
-var maApp = angular.module('app', []);
 
-maApp.directive('ssngSelect', function(){
+
+angular.module('ssngSelect', []).directive('ssngSelect', function(){
 
     return {
         restrict: 'A',
-
+        scope:{},
         link: function(scope, element, attrs){
 
-          scope.datas =  scope[attrs['ssngSelect']];
+          scope.datas =  scope.$parent[attrs['ssngSelect']];
          
                      scope.openSlect = false; 
                                  
                                     
                      scope.callback = function(index,text){
-                      scope.index = index;
+                      scope.index = index+1;
                       scope.text = text;
-                      alert(index);
-                    }
+                      alert("你选择了第"+scope.index+"个选项");
+                                                           }
            
-        },
+                                              },
 
-        template: '<span ng-click="openSlect=!openSlect" >请选择...</span>' +
+        template: 
+            '<span ng-click="openSlect=!openSlect" >请选择...</span>' +
             '<ul ng-show="openSlect">' +
-            '<table><tr ng-repeat="item in datas"><td ng-click="callback(item.index,item.text)">{{ item.index }}:{{ item.text }}</td></tr></table>'+
+            '<table><tr ng-repeat="item in datas"><td ng-click="callback($index,item.text)">{{ $index }}:{{ item.text }}</td></tr></table>'+
             '</ul>'
-    };
-});
 
+             };
+                                                                    });
 
-maApp.controller('DemoCtrl', function($scope){
-
-  $scope.items = items;
-
-
-});
-
-
-maApp.controller('DemoCtrl2', function($scope){
-
-
-  $scope.items2 = items2;
-
-});
 }());

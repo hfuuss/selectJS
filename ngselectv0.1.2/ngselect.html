@@ -9,38 +9,37 @@
 
 </head>
 <body>
-<div ng-controller="DemoCtrl">
-111
-<div ssng-select="items"></div>
+<div ng-controller="selectCtrl">
+		第一个select
+		<div ssng-select="items"></div>
 
-</div>
-<div ng-controller="DemoCtrl2">
-222
 
-<div ssng-select="items2"></div>
+		第二个select(测试)
 
-<!-- <ssng-Select items="items" callback="callback"></ssng-Select> -->
-
-</div>
-    
-    
-  </li>
-
+		<div ssng-select="items2"></div>
 
  </div>
 <script type="text/javascript">
 	
-	var items = [
-    {index: 1, text: 'desc001'},
-    {index: 2, text: 'desc002'},
-    {index: 3, text: 'desc003'},        
+ var myApp = angular.module("app",['ssngSelect']);
+
+myApp.controller('selectCtrl', function($scope){
+
+ 	$scope.items = [
+   	 {text :'desc001'},
+  	 {text :'desc002'},
+  	 {text :'desc003'},        
 ];
 
-	var items2 = [
-    {index: 12, text: '2desc001'},
-    {index: 22, text: '2desc002'},
-    {index: 32, text: '2desc003'},        
+	 $scope.items2 = [
+      {text :'2desc001'},
+  	  {text :'2desc002'},
+  	  {text :'2desc003'},        
 ];
+
+
+});
+
 
 </script>
 
